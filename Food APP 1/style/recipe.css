@@ -1,0 +1,62 @@
+body{
+    background-image: linear-gradient(to right, #eea2a2 0%, #ff53b1 19%, #57c6e1 42%, #a984ee 79%, #7fdaf1 100%);
+  }
+
+    .container{
+        padding-top: 100px;
+      }
+      #images{
+          margin: auto;
+          width: 300px;
+          height: 330px;
+          margin-top: -50px;
+          display: block;
+          justify-content: center;
+          align-items: center;
+      }
+   h3{
+        text-align: center;
+      }
+      iframe{
+        margin: auto;
+      }
+
+      
+    .text-center{
+        margin-top: -32px;
+      
+      
+        padding-bottom: 10px;
+       
+      }
+      .text-center img{
+        height: 20px;
+      }
+      #get_Meal{
+    
+        border: none;
+        background-color: crimson;
+        font-size: 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        height: 50px;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+      }
+      #get_Meal:hover{
+        color: bisque;
+        background-color: rgb(255, 12, 60);
+      }
+      h5 {
+        font-style: italic;
+        font-size: 20px;
+        line-height: 0px;
+      }
+      span{
+        color: crimson;
+        font-weight: bolder;
+      }
+     #header{
+       top: 0;
+     }

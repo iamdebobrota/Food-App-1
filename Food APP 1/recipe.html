@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recip of the day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" 
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/recipe.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+      <div class="row text-center">
+       
+        <h1>Get Recipe of the Day</h1>
+        <button class="button-primary" id="get_Meal">Get Meal</button>
+      </div>
+      <div id="meal" class="row meal"></div>
+    </div>
+
+
+
+
+
+
+
+
+  </body>
+  </html>
+  <!-- <script src="./script/script.js"></script> -->
+  <script type="module">
+
+
+  import navbar from "./component/navbar.js"
+    // import {getData, parent} from "./script/script.js"
+    // console.log("getData:",getData)
+
+
+  let header = document.getElementById("header")
+  let parent = document.getElementById("showData")
+
+  header.innerHTML=navbar();
+    
+
+
+    // let responce = await getData(`www.themealdb.com/api/json/v1/1/search.php?f=a`)
+
+    // console.log("responce:",responce)
+
+    // append(responce, parent)
+
+
+//append data
+const getMealBtn = document.getElementById('get_Meal')
+const mealContainer = document.getElementById('meal')
+
+getMealBtn.addEventListener('click',()=>{
+  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+  .then(res => res.json())
+  .then(res => {
+ 
+   
+// console.log(res.meals[0].strMealThumb)
+    createMeal(res.meals[0])
+   
+  })
+  
+})
+
+function createMeal(meal){
+  const mealContainer = document.getElementById('meal')
+  mealContainer.innerHTML=null;
+ 
+
+  // console.log("meal")
+  // mealContainer.innerHTML= `
+  // <div class ="row">
+  //   <div class="column five" 
+  //   <img src="${meal.strMealThumb}" alt = "meal img" />
+  //   </div>
+  //   </div
+  //   `;
+
+  let div = document.createElement('div')
+
+  let img = document.createElement("img")
+  img.src= meal.strMealThumb;
+  img.setAttribute("id", "images")
+
+  let title = document.createElement('h3')
+  title.innerText=`Title: ${meal.strMeal}`;
+
+
+
+
+  let p = document.createElement('p')
+  p.innerText=`Follow The Instructions: ${ meal.strInstructions}`
+
+
+  let div2 = document.createElement("div")
+    let iframe = document.createElement('iframe')
+    iframe.setAttribute("id", "video")
+    iframe.src=`https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}`;
+    iframe.width = "50%"
+      iframe.height = "300px"
+      
+
+      iframe.allow = "fullscreen";
+
+    div2.append(iframe)
+//strYoutube
+
+  div.append(img,title,p,div2)
+
+
+  mealContainer.append(div)
+
+  console.log(meal)
+
+
+
+}
+
+
+
+
+
+  </script>

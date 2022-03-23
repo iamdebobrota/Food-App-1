@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" 
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/index.css">
+   
+</head>
+<body>
+  <div id="header"></div>
+<div class="container">
+    <div class="meal-wrapper">
+        <div class="meal-search">
+            <h2 class="title">
+               Find Meals for Yours Ingredients
+            </h2>
+            <blockquote>Real food does't have Ingredients, real food is ingredients. <br>
+            <cite>Debobrota Haldar</cite></blockquote>
+
+            <div class="meal-search-box">
+                <input type="text" class="search-control" placeholder="Enter Your Ingreients" id="search-input">
+                <button type="submit" class="search-btn btn" id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="meal-result">
+            <h2 class="title">Your Search Results:</h2>
+            <div id="meal">
+                <!-- meal items -->
+                <!-- <div class="meal-item">
+                     <div class="meal-img">
+                         <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                          alt="food">
+                        </div>
+                        <div class="meal-name">
+                            <h3>Potato Chips</h3>
+                            <a href="" class="recipe-btn">Get Recipe</a>
+                        </div>
+                    </div> -->
+                            <!-- endof meals items -->
+                          <!-- meal items -->
+                <!-- <div class="meal-item">
+                    <div class="meal-img">
+                        <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                         alt="food">
+                       </div>
+                       <div class="meal-name">
+                           <h3>Potato Chips</h3>
+                           <a href="" class="recipe-btn">Get Recipe</a>
+                       </div>
+                   </div> -->
+                           <!-- endof meals items -->
+                             <!-- meal items -->
+                <!-- <div class="meal-item">
+                    <div class="meal-img">
+                        <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                         alt="food">
+                       </div>
+                       <div class="meal-name">
+                           <h3>Potato Chips</h3>
+                           <a href="" class="recipe-btn">Get Recipe</a>
+                       </div>
+                   </div> -->
+                           <!-- endof meals items -->
+                             
+            </div>
+        </div>
+
+        <div class="meal-details">
+            <!-- recipe close btn -->
+
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn"> <i class="fas fa-times"></i></button>
+            <!-- meal content -->
+            <div class="meal-details-content">
+                <h2 class="recipe-title">Name Here</h2>
+                <p class="recipe-catagory"></p>
+                <h3>Instructions: </h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus libero non repellat vero, nostrum similique!
+                     Provident odit unde accusamus officiis ut at. Molestiae architecto doloremque,
+                      dolores vero voluptates hic voluptatem.
+                Nulla accusantium, expedita quae doloremque magni dolorem asperiores! 
+                Cumque sunt facere dolorem obcaecati culpa architecto expedita delectus,
+                 officiis itaque adipisci sapiente ex inventore asperiores dolore eaque similique,
+                  nesciunt corporis suscipit!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                      Adipisci laboriosam in vero quisquam
+                       illo iste similique provident porro, vel voluptate amet 
+                       id nostrum doloribus reprehenderit ab expedita placeat
+                        voluptatibus ex.</p>
+                  </div>
+                  <div class="recipe-meal-img">
+                      <img src="food.jpg" alt="">
+                     </div>
+            <div class="recipe-link">
+                <a href="#" target="_blanck">Watch Videos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+  <script src="./script/script.js"></script>
+</body>
+</html>
+<script type="module">
+import navbar from "./component/navbar.js"
+let header = document.getElementById("header")
+header.innerHTML=navbar();
+
+</script>

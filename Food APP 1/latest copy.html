@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" 
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/latest.css">
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    <div id="header"></div>
+
+    
+<div class="container">
+  <div class="row text-center">
+    <h2>Felling <img src="hungry.png" alt=""><span>Hungry?</span>  </h2>
+    <h5>Get Latest Recipe
+      <img src="person-hunger.png" alt="">
+    </h5>
+    <button class="button-primary" id="get_Meal">Get Meal <img src="hunger.png" alt=""></button>
+  </div>
+  <div id="meal" class="row meal"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+  </html>
+  <script type="module">
+
+  import navbar from "./component/navbar.js"
+  let header = document.getElementById("header")
+  header.innerHTML=navbar();
+  
+
+
+//append data
+const getMealBtn = document.getElementById('get_Meal')
+const mealContainer = document.getElementById('meal')
+
+getMealBtn.addEventListener('click', async ()=>{
+  let res = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+    let data = await res.json();
+
+console.log(data.meals)
+    createMeal(data.meals)
+  })
+  
+
+
+function createMeal(meal){
+  const mealContainer = document.getElementById('meal')
+  mealContainer.innerHTML=null;
+ 
+meal.forEach((el)=>{
+
+  let div = document.createElement('div')
+  div.setAttribute("id","divmain")
+
+  let img = document.createElement("img")
+  img.src= el.strMealThumb;
+  img.setAttribute("id", "images")
+
+  let title = document.createElement('h3')
+  title.innerText=` ${el.strMeal}`;
+
+  div.append(img,title)
+
+  mealContainer.append(div)
+
+
+
+
+})
+
+
+  
+  // mealContainer.innerHTML= `
+  // <div class ="row">
+  //   <div class="column five" 
+  //   <img src="${meal.strMealThumb}" alt = "meal img" />
+  //   </div>
+  //   </div
+  //   `;
+
+  // let div = document.createElement('div')
+
+  // let img = document.createElement("img")
+  // img.src= meal.strMealThumb;
+  // img.setAttribute("id", "images")
+
+  // let title = document.createElement('h3')
+  // title.innerText=`Title: ${meal.strMeal}`;
+
+  // div.append(img,title)
+
+  // mealContainer.append(div)
+
+  // console.log(meal)
+}
+
+
+
+
+
+
+
+
+
+  </script>
